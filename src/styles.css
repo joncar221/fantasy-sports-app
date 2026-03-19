@@ -20,8 +20,14 @@ app-account {
   display: flex;
 }
 
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 app-header-bar {
-  width: 100vw;
+  width: 100%;
   height: 10vh;
   color: white;
   background-color: rgb(49, 49, 49);
@@ -32,7 +38,7 @@ app-header-bar {
 }
 
 app-sidebar {
-  width: 20vw;
+  width: 30vw;
   min-width: 200px;
   max-width: 300px;
   height: 100vh;
@@ -44,6 +50,19 @@ app-sidebar {
   align-items: center;
   justify-content: flex-start;
   padding: 10px;
+}
+
+app-league-card {
+  width: 90%;
+  height: 10%;
+  border-radius: 10px;
+  background-color: rgb(170, 14, 46);
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @import 'tailwindcss';

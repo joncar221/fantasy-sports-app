@@ -11,3 +11,17 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model User {
+  id Int @id @default(autoincrement())
+  email String @unique
+  name String?
+  leagues League[]
+}
+
+model League {
+  id Int @id @default(autoincrement())
+  name String
+  owner User @relation(fields: [ownerId], references: [id])
+  ownerId Int
+}

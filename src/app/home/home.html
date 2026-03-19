@@ -1,4 +1,17 @@
 @if (sidebarService.getData()) {
   <app-sidebar />
 }
-<app-header-bar />
+<div class="main">
+  <app-header-bar />
+  <div class="content">
+    <div class="home-header">
+      <p>Create a League</p>
+      <p>Mock Draft</p>
+    </div>
+
+    <app-league-card />
+    <app-league-card />
+    <app-league-card />
+    <app-league-card />
+  </div>
+</div>

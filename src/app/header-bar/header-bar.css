@@ -1,5 +1,5 @@
 .sidebar {
-  background-color: black;
+  background-color: rgb(170, 14, 46);
   padding: 5px;
   border-radius: 5px;
   cursor: pointer;
@@ -7,7 +7,7 @@
 }
 
 .accountIcon {
-  background-color: black;
+  background-color: rgb(170, 14, 46);
   width: 40px;
   height: 40px;
   margin: 5px;
