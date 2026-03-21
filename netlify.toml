@@ -1,5 +1,5 @@
 [[redirects]]
 from = "/"
-to = "/home.html"
+to = "/home"
 status = 301
 force = true
