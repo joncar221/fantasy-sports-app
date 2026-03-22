@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-league-card',
@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './league-card.html',
   styleUrl: './league-card.css',
 })
-export class LeagueCard {}
+export class LeagueCard {
+  @Input() leaguename: string = '';
+}

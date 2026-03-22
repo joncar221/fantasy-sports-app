@@ -9,9 +9,8 @@
       <a href="/mockdraftlobby">Mock Draft</a>
     </div>
 
-    <app-league-card />
-    <app-league-card />
-    <app-league-card />
-    <app-league-card />
+    @for (item of leagueList; track $index) {
+      <app-league-card [leaguename]="item.name" />
+    }
   </div>
 </div>
