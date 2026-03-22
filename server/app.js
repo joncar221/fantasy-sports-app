@@ -8,7 +8,6 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 app.use(express.json());
-app.use(cors());
 
 app.get('/', async (req, res) => {
   const users = await prisma.user.findMany();
@@ -17,6 +16,11 @@ app.get('/', async (req, res) => {
 
 app.get('/users', (req, res) => {
   res.send('yo');
+});
+
+app.get('/leagues', cors(), async (req, res) => {
+  const leagues = await prisma.league.findMany();
+  res.json(leagues);
 });
 
 app.listen(PORT, () => {
