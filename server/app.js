@@ -3,16 +3,20 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 const cors = require('cors');
+const { PrismaClient } = require('@prisma/client');
+
+const prisma = new PrismaClient();
 
 app.use(express.json());
 app.use(cors());
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+app.get('/', async (req, res) => {
+  const users = await prisma.user.findMany();
+  res.json(users);
 });
 
 app.get('/users', (req, res) => {
-  res.send('So many users');
+  res.send('yo');
 });
 
 app.listen(PORT, () => {
