@@ -23,8 +23,12 @@ export class Home implements OnInit {
     this.getLeagues();
   }
   getLeagues() {
-    this.http.get(`${this.BASE_URL}/leagues`).subscribe((result: any) => {
-      this.leagueList = result;
-    });
+    if (environment.apiUrl) {
+      this.http.get(`${this.BASE_URL}/leagues`).subscribe((result: any) => {
+        this.leagueList = result;
+      });
+    } else {
+      console.warn('API URL not configured');
+    }
   }
 }
