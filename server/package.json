@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "run start": "node app.js"
+    "run start": "node app.js",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +16,8 @@
     "@prisma/client": "^5.22.0",
     "cors": "^2.8.6",
     "dotenv": "^16.3.1",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "socket.io": "^4.8.3"
   },
   "devDependencies": {
     "prisma": "^5.22.0"
