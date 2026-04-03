@@ -13,6 +13,13 @@ app-league {
   display: flex;
 }
 
+app-create-league-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(65, 65, 65);
+  display: flex;
+}
+
 app-account {
   width: 100vw;
   height: 100vh;

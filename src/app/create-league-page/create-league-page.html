@@ -1,1 +1,28 @@
-<p>create-league-page works!</p>
+@if (sidebarService.getData()) {
+  <app-sidebar />
+}
+<div class="main">
+  <app-header-bar />
+  <div class="content">
+    <h1>Create Your League!</h1>
+
+    <div class="flex p-5">
+      <label class="w-30">Name:</label>
+      <textarea></textarea>
+    </div>
+
+    <div class="flex p-5">
+      <label class="w-30">Description:</label>
+      <textarea></textarea>
+    </div>
+
+    <div class="flex items-center p-5">
+      <label class="w-30">Number of Managers:</label>
+      <select>
+        <option value="8">8</option>
+      </select>
+    </div>
+
+    <button class="bg-black p-2">Create</button>
+  </div>
+</div>
