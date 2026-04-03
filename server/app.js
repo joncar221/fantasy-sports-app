@@ -4,6 +4,8 @@ const app = express();
 const PORT = 3000;
 const cors = require('cors');
 const { PrismaClient } = require('@prisma/client');
+const server = require('http').createServer(app);
+const io = require('socket.io')(server, { cors: '*' });
 
 const prisma = new PrismaClient();
 
@@ -24,6 +26,6 @@ app.get('/leagues', cors(), async (req, res) => {
   res.json(leagues);
 });
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
