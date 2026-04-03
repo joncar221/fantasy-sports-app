@@ -16,12 +16,14 @@ export class Home implements OnInit {
   protected sidebarService = inject(SidebarService);
 
   BASE_URL = environment.apiUrl;
-
   leagueList: any[] = [];
+
   constructor(private http: HttpClient) {}
   ngOnInit(): void {
+    console.log('INITTTTT');
     this.getLeagues();
   }
+
   getLeagues() {
     if (environment.apiUrl) {
       this.http.get(`${this.BASE_URL}/leagues`).subscribe((result: any) => {
