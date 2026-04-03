@@ -12,5 +12,7 @@
     @for (item of leagueList; track $index) {
       <app-league-card [leaguename]="item.name" />
     }
+    <button class="w-20 cursor-pointer bg-amber-950" (click)="getLeagues()">New</button>
+    <button class="w-20 cursor-pointer bg-amber-950" (click)="clickedButton()">Update</button>
   </div>
 </div>

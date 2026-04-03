@@ -33,4 +33,8 @@ export class Home implements OnInit {
       console.warn('API URL not configured');
     }
   }
+
+  clickedButton() {
+    console.log('Update');
+  }
 }
