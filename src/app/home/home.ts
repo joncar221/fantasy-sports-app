@@ -26,7 +26,7 @@ export class Home implements OnInit {
   getLeagues() {
     if (environment.apiUrl) {
       this.http.get(`${this.BASE_URL}/leagues`).subscribe((result: any) => {
-        this.leagueList = result;
+        this.leagueList = [...result];
         console.log(this.leagueList);
       });
     } else {

@@ -9,7 +9,7 @@
       <a href="/mockdraftlobby">Mock Draft</a>
     </div>
 
-    @for (item of leagueList; track $index) {
+    @for (item of leagueList; track item.id) {
       <app-league-card [leaguename]="item.name" />
     }
     <button class="w-20 cursor-pointer bg-amber-950" (click)="getLeagues()">New</button>
