@@ -8,7 +8,7 @@
 
     <div class="flex p-5">
       <label class="w-30">Name:</label>
-      <textarea></textarea>
+      <input type="text" (input)="getLeagueName($event)" />
     </div>
 
     <div class="flex p-5">
@@ -25,7 +25,8 @@
         <option value="8">12</option>
       </select>
     </div>
-
-    <button class="bg-black p-2 cursor-pointer" (click)="createLeague()">Create</button>
+    <a href="/home">
+      <button class="bg-black p-2 cursor-pointer" (click)="createLeague()">Create</button>
+    </a>
   </div>
 </div>

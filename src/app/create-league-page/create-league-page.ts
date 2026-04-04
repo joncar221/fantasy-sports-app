@@ -16,17 +16,24 @@ export class CreateLeaguePage {
 
   BASE_URL = environment.apiUrl;
 
+  leagueName = '';
+
   constructor(private http: HttpClient) {}
 
   createLeague() {
     if (environment.apiUrl) {
       this.http
-        .post(`${this.BASE_URL}/leagues`, { name: 'New League', description: 'TEST' })
+        .post(`${this.BASE_URL}/leagues`, { name: this.leagueName, description: 'TEST' })
         .subscribe((result: any) => {
           console.log(result);
         });
     } else {
       console.warn('API URL not configured');
     }
+  }
+
+  getLeagueName(event: Event) {
+    const name = (event.target as HTMLInputElement).value;
+    this.leagueName = name;
   }
 }
