@@ -19,10 +19,13 @@
     <div class="flex items-center p-5">
       <label class="w-30">Number of Managers:</label>
       <select>
+        <option value="8">6</option>
         <option value="8">8</option>
+        <option value="8">10</option>
+        <option value="8">12</option>
       </select>
     </div>
 
-    <button class="bg-black p-2">Create</button>
+    <button class="bg-black p-2 cursor-pointer" (click)="createLeague()">Create</button>
   </div>
 </div>

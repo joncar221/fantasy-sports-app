@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
+import { environment } from '../../environments/environment';
 import { HeaderBar } from '../header-bar/header-bar';
 import { SidebarService } from '../sidebar-service';
 import { Sidebar } from '../sidebar/sidebar';
@@ -11,4 +13,20 @@ import { Sidebar } from '../sidebar/sidebar';
 })
 export class CreateLeaguePage {
   protected sidebarService = inject(SidebarService);
+
+  BASE_URL = environment.apiUrl;
+
+  constructor(private http: HttpClient) {}
+
+  createLeague() {
+    if (environment.apiUrl) {
+      this.http
+        .post(`${this.BASE_URL}/leagues`, { name: 'New League', description: 'TEST' })
+        .subscribe((result: any) => {
+          console.log(result);
+        });
+    } else {
+      console.warn('API URL not configured');
+    }
+  }
 }

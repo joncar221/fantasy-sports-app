@@ -26,6 +26,12 @@ app.get('/leagues', cors(), async (req, res) => {
   res.json(leagues);
 });
 
+app.post('/leagues', async (req, res) => {
+  const { name, description } = req.body;
+  const newLeague = await prisma.league.create({ data: { name, ownerId: 2 } });
+  res.status(201).json(newLeague);
+});
+
 server.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
