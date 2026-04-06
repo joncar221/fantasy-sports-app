@@ -27,6 +27,7 @@ export class Home implements OnInit {
     if (environment.apiUrl) {
       this.http.get(`${this.BASE_URL}/leagues`).subscribe((result: any) => {
         this.leagueList = [...result];
+        console.log(this.leagueList);
       });
     } else {
       console.warn('API URL not configured');
