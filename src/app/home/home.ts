@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HeaderBar } from '../header-bar/header-bar';
@@ -25,7 +25,13 @@ export class Home implements OnInit {
 
   getLeagues() {
     if (environment.apiUrl) {
-      this.http.get(`${this.BASE_URL}/leagues`).subscribe((result: any) => {
+      const headers = new HttpHeaders({
+        'Cache-Control': 'no-cache',
+        Pragma: 'no-cache',
+        Expires: '0',
+      });
+
+      this.http.get(`${this.BASE_URL}/leagues`, { headers }).subscribe((result: any) => {
         this.leagueList = [...result];
         console.log(this.leagueList);
       });
