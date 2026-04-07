@@ -5,7 +5,6 @@ const PORT = 3000;
 const cors = require('cors');
 const { PrismaClient } = require('@prisma/client');
 const server = require('http').createServer(app);
-const io = require('socket.io')(server, { cors: '*' });
 
 const prisma = new PrismaClient();
 
@@ -17,18 +16,14 @@ app.get('/', async (req, res) => {
   res.json(users);
 });
 
-app.get('/users', (req, res) => {
-  res.send('yo');
-});
-
 app.get('/leagues', cors(), async (req, res) => {
   const leagues = await prisma.league.findMany();
   res.json(leagues);
 });
 
-app.post('/leagues', async (req, res) => {
+app.post('/leagues', cors(), async (req, res) => {
   const { name, description } = req.body;
-  const newLeague = await prisma.league.create({ data: { name, ownerId: 2 } });
+  const newLeague = await prisma.league.create({ data: { name, ownerId: 1 } });
   res.status(201).json(newLeague);
 });
 
